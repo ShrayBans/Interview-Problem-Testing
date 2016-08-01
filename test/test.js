@@ -1,7 +1,7 @@
 //npm install mocha
 var expect = require('chai').expect;
 var fizzbuzz = require('../algos/fizzbuzz.js');
-// var appleStocks = require('../algos/apple-stock.js');
+var appleStocks = require('../algos/apple-stocks.js');
 // var balancedParens = require('../algos/balanced-parens.js');
 // var binToDec = require('../algos/bin-to-dec.js');
 // var drawStairs = require('../algos/draw-stairs.js');
@@ -41,20 +41,14 @@ describe('Fizzbuzz Algorithm', function(){
 });
 
 describe('Apple Stocks Algorithm', function(){
-	it('length', function(){
-		expect(fizzbuzz(3)).to.have.length(3);
+	it('Evaluates profit', function(){
+		expect(appleStocks([4,5,3,2,5,2,9])).to.equal(7);
 	});
-	it('Fizz', function(){
-		expect(fizzbuzz(15)[2]).to.equal('fizz');
+	it('Invalid input', function(){
+		expect(appleStocks(15)).to.equal(0);
 	});
-	it('Buzz', function(){
-		expect(fizzbuzz(15)[4]).to.equal('buzz');
-	});
-	it('Fizzbuzz', function(){
-		expect(fizzbuzz(15)[14]).to.equal('fizzbuzz');
-	});
-	it('Fizzbuzz at Large Numbers', function(){
-		expect(fizzbuzz(400)[359]).to.equal('fizzbuzz');
+	it('No profit', function(){
+		expect(appleStocks([4,3,2,1])).to.equal(0);
 	});
 });
 
