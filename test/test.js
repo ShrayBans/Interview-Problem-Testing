@@ -12,7 +12,7 @@ var appleStocks = require('../algos/apple-stocks.js');
 // var mergeArray = require('../algos/merge-array.js');
 // var modeMean = require('../algos/mode-mean.js');
 // var numToWords = require('../algos/num-to-words.js');
-// var power = require('../algos/pow.js');
+var pow = require('../algos/pow.js');
 // var reverseInPlace = require('../algos/reverse-in-place.js');
 // var reverseLL = require('../algos/reverse-linked-list.js');
 // var romanNumerals = require('../algos/roman-numeral.js');
@@ -156,6 +156,21 @@ describe('Greatest Common Denominator', function(){
 		expect(gcd(15)).to.equal(0);
 		expect(gcd(0, 15)).to.equal(0);
 	});
+});
+
+describe('Pow using recursion', function(){
+	it('Small Calculations', function(){
+		expect(pow(5, 2)).to.equal(25);
+	});
+	it('Large numbers', function(){
+		expect(pow(173, 3)).to.equal(5177717);
+	});
+	it('1 Input only', function(){
+		expect(pow(5)).to.equal(1);
+	});
+	it('Invalid Input', function(){
+		expect(pow()).to.equal(1);
+	});	
 });
 
 
