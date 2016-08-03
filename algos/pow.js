@@ -6,5 +6,5 @@ function pow(base, power) {
 	if (power === 0 || !power || !base) return 1;
 	return base * pow(base, power -1);
 }
-`
+
 module.exports = pow;

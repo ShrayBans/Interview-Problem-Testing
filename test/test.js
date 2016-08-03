@@ -17,7 +17,7 @@ var pow = require('../algos/pow.js');
 // var reverseLL = require('../algos/reverse-linked-list.js');
 // var romanNumerals = require('../algos/roman-numeral.js');
 // var stringRotation = require('../algos/string-rotation.js');
-// var subsetSum = require('../algos/subset-sum.js');
+var subsetSum = require('../algos/subset-sum.js');
 // var zipLL = require('../algos/zip-linked-lists.js');
 var gcd = require('../algos/gcd.js');
 
@@ -173,7 +173,20 @@ describe('Pow using recursion', function(){
 	});	
 });
 
-
+describe('Subset Sum', function(){
+	it('Basic Case', function(){
+		expect(subsetSum([3, 7, 4, 2], 5)).to.equal(true);
+	});
+	it('Larger case', function(){
+		expect(subsetSum([3, 34, 4, 12, 5, 12], 32)).to.equal(true);
+	});
+	it('Invalid Case', function(){
+		expect(subsetSum([8, 2, 4, 12], 13)).to.equal(false);
+	});
+	it('Negative Number Case', function(){
+		expect(subsetSum([8, -2, 1, -3], 6)).to.equal(true);
+	});	
+});
 
 
 
