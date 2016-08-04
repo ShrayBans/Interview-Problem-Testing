@@ -93,16 +93,16 @@ describe('Draw Stairs Algorithm', function(){
 		expect(fizzbuzz(3)).to.have.length(3);
 	});
 	it('Fizz', function(){
-		expect(fizzbuzz(15)[2]).to.equal('fizz');
+		expect(drawStairs(15)[2]).to.equal('fizz');
 	});
 	it('Buzz', function(){
-		expect(fizzbuzz(15)[4]).to.equal('buzz');
+		expect(drawStairs(15)[4]).to.equal('buzz');
 	});
-	it('Fizzbuzz', function(){
-		expect(fizzbuzz(15)[14]).to.equal('fizzbuzz');
+	it('drawStairs', function(){
+		expect(drawStairs(15)[14]).to.equal('drawStairs');
 	});
-	it('Fizzbuzz at Large Numbers', function(){
-		expect(fizzbuzz(400)[359]).to.equal('fizzbuzz');
+	it('drawStairs at Large Numbers', function(){
+		expect(drawStairs(400)[359]).to.equal('drawStairs');
 	});
 });
 
