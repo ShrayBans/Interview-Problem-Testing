@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/ShrayBans/Interview-Problem-Testing#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "make-runnable": "^1.0.5",
     "mocha": "^2.5.3"
   }
 }

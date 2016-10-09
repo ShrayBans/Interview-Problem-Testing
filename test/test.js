@@ -88,7 +88,7 @@ describe('Binary to Decimal Algorithm', function(){
 	});
 });
 
-describe('Draw Stairs Algorithm', function(){
+xdescribe('Draw Stairs Algorithm', function(){
 	it('length', function(){
 		expect(fizzbuzz(3)).to.have.length(3);
 	});
