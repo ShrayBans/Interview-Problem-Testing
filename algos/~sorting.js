@@ -13,7 +13,7 @@ function bubbleSort(array) {
 }
 
 function mergeSort(array) {
-
+	
 	return array;
 }
 
