@@ -6,7 +6,6 @@ var appleStocks = require('../algos/apple-stocks.js');
 // var binToDec = require('../algos/bin-to-dec.js');
 // var drawStairs = require('../algos/draw-stairs.js');
 // var highestProduct = require('../algos/highest-product.js');
-// var kthToLastNode = require('../algos/kth-to-last-node.js');
 // var matchWord = require('../algos/match-word.js');
 // var maxStack = require('../algos/max-stack.js');
 // var mergeArray = require('../algos/merge-array.js');
@@ -14,11 +13,9 @@ var appleStocks = require('../algos/apple-stocks.js');
 // var numToWords = require('../algos/num-to-words.js');
 var pow = require('../algos/pow.js');
 // var reverseInPlace = require('../algos/reverse-in-place.js');
-// var reverseLL = require('../algos/reverse-linked-list.js');
 // var romanNumerals = require('../algos/roman-numeral.js');
 // var stringRotation = require('../algos/string-rotation.js');
 var subsetSum = require('../algos/subset-sum.js');
-// var zipLL = require('../algos/zip-linked-lists.js');
 var gcd = require('../algos/gcd.js');
 
 
@@ -107,24 +104,6 @@ xdescribe('Draw Stairs Algorithm', function(){
 });
 
 describe('Highest Product Algorithm', function(){
-	it('length', function(){
-		expect(fizzbuzz(3)).to.have.length(3);
-	});
-	it('Fizz', function(){
-		expect(fizzbuzz(15)[2]).to.equal('fizz');
-	});
-	it('Buzz', function(){
-		expect(fizzbuzz(15)[4]).to.equal('buzz');
-	});
-	it('Fizzbuzz', function(){
-		expect(fizzbuzz(15)[14]).to.equal('fizzbuzz');
-	});
-	it('Fizzbuzz at Large Numbers', function(){
-		expect(fizzbuzz(400)[359]).to.equal('fizzbuzz');
-	});
-});
-
-describe('Kth To Last Node Algorithm', function(){
 	it('length', function(){
 		expect(fizzbuzz(3)).to.have.length(3);
 	});

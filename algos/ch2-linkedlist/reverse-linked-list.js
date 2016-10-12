@@ -13,31 +13,24 @@ function Node(value) {
     this.next = null;
 }
 
-function reverseLinkedList(head) {
+//   a -> b -> c -> d
+//   a <- b <- c <- d
 
 	//EASY IMPLEMENTATION IS TO JUST PUT EACH VALUE IN AN ARRAY AND TO ADD TO NEW LIST
 	//HOW TO DO RECURSIVELY?
 	//SPLIT UP EACH BODY WITH THE REST AND REVERSE EACH REST RECURSIVELY (Couldn't implement yet)
 
-
-
-	//base case
-	if(head.next === null) {
-		var node = new Node(head.value) //NOT SURE IF HEAD HAS VALUE?!
-		node.next = head;
-		return node
+function reverseLinkedList(head) {
+	var prev = null;
+	var current = head;
+	var next;
+	while(current) {
+		next = current.next;
+		current.next = prev;
+		prev = current;
+		current = next;
 	}
-	//save 2 variables, the front piece and the end piece
-	var toBeReversed = head.next;
-	//take the second term 
-
-	//
-
-	//
-
-	//
-	return reverseLinkedList(head.next);
-	//
+	return prev;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
