@@ -1,10 +1,10 @@
-var reverseLinkedList = require('../algos/ch2-linkedlist/reverse-linked-list.js').reverseLinkedList;
-var zipLL = require('../algos/ch2-linkedlist/zip-linked-lists.js');
-var kthToLastNode = require('../algos/ch2-linkedlist/kth-to-last-node.js');
+/* global xdescribe describe it */
 
-var expect = require('chai').expect;
+const reverseLinkedList = require('../algos/ch2-linkedlist/reverse-linked-list.js').reverseLinkedList;
+const zipLL = require('../algos/ch2-linkedlist/zip-linked-lists.js');
+const kthToLastNode = require('../algos/ch2-linkedlist/kth-to-last-node.js');
 
-
+const expect = require('chai').expect;
 
 function Node(val) {
   this.value = val;
@@ -12,55 +12,73 @@ function Node(val) {
 }
 
 function LinkedList() {
-	this.head = null;
-	this.tail = null;
-	this.push = function(value) {
-		var node = new Node(value);
-		if (this.head === null) {
-			this.head = node;
-			this.tail = this.head;
-		} else {
-			this.tail.next = node;
-			this.tail = node;
-		}
-	};
+  this.head = null;
+  this.tail = null;
+  this.push = (value) => {
+    const node = new Node(value);
+    if (this.head === null) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+  };
 }
 
-describe('Linked List Algorithms', function(){
+xdescribe('Linked List Algorithms', () => {
+  describe('Reverse Linked List', () => {
+    const forward = new LinkedList();
+    forward.push(1);
+    forward.push(2);
+    forward.push(3);
+    forward.push(4);
+    forward.push(5);
+    const reversed = new LinkedList();
+    reversed.push(5);
+    reversed.push(4);
+    reversed.push(3);
+    reversed.push(2);
+    reversed.push(1);
+    it('Simple Case', () => {
+      expect(reverseLinkedList(forward.head)).to.eql(reversed.head);
+    });
+  });
 
-		var L1 = new LinkedList();
-		var L2 = new LinkedList();
-		var L3 = new LinkedList();
+  describe('Zip Linked List', () => {
+    const firstLL = new LinkedList();
+    const secondLL = new LinkedList();
+    const result = new LinkedList();
+    firstLL.push(1);
+    firstLL.push(5);
+    firstLL.push(10);
+    secondLL.push(2);
+    secondLL.push(3);
+    secondLL.push(8);
+    result.push(1);
+    result.push(2);
+    result.push(3);
+    result.push(4);
+    result.push(8);
+    result.push(10);
+    it('Zipped Case', () => {
+      expect(zipLL(firstLL.head, secondLL.head)).to.eql(result.head);
+    });
+  });
 
-	describe('Reverse Linked List', function(){
-		L1.push(1);
-		L1.push(2);
-		L1.push(3);
-		L3.push(3);
-		L3.push(2);
-		L3.push(1);
+  describe('Kth To Last Node', () => {
+    const forward = new LinkedList();
+    forward.push(1);
+    forward.push(2);
+    forward.push(3);
+    forward.push(4);
+    forward.push(5);
 
-		it('Simple Case', function(){
-			expect(reverseLinkedList(L1.head)).to.eql(L3.head);
-		});
-	});
-
-	xdescribe('Zip Linked List', function(){
-		it('Simple Case', function(){
-			expect(zipLL(2)).to.equal(2);
-		});
-		it('Larger case', function(){
-			expect(zipLL(10)).to.equal(274);
-		});
-	});
-
-	xdescribe('Kth To Last Node', function(){
-		it('Simple Case', function(){
-			expect(kthToLastNode(2)).to.equal(2);
-		});
-		it('Larger case', function(){
-			expect(kthToLastNode(10)).to.equal(274);
-		});
-	});
+    it('Basic Case', () => {
+      expect(kthToLastNode(2, forward.head)).to.equal(3);
+    });
+    it('Last Case', () => {
+      expect(kthToLastNode(0, forward.head)).to.equal(5);
+    });
+  });
 });
-

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,11 @@
   "homepage": "https://github.com/ShrayBans/Interview-Problem-Testing#readme",
   "dependencies": {
     "chai": "^3.5.0",
-    "make-runnable": "^1.0.5",
     "mocha": "^2.5.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "eslint": "^3.8.1"
   }
 }
