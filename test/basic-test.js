@@ -8,6 +8,7 @@ const drawStairs = require('../algos/draw-stairs.js');
 // var highestProduct = require('../algos/highest-product.js');
 // var matchWord = require('../algos/match-word.js');
 const Stack = require('../algos/max-stack.js');
+const Queue = require('../algos/queue-of-stacks.js');
 // var mergeArray = require('../algos/merge-array.js');
 // var modeMean = require('../algos/mode-mean.js');
 // var numToWords = require('../algos/num-to-words.js');
@@ -107,6 +108,27 @@ describe('Stack w/ push, pop, getMax', () => {
     stack.push(5);
     stack.push(2);
     expect(stack.getMax()).to.equal(5);
+  });
+});
+
+describe('Queue of Two Stacks', () => {
+  const queue = new Queue();
+  it('Is Empty', () => {
+    expect(queue.isEmpty()).to.equal(true);
+  });
+  it('enqueue', () => {
+    queue.enqueue(1);
+    expect(queue.getStorage()).to.eql([1]);
+    expect(queue.getLength()).to.equal(1);
+    queue.enqueue(2);
+    expect(queue.getStorage()).to.eql([1, 2]);
+    expect(queue.getLength()).to.equal(2);
+    queue.enqueue(4);
+  });
+  it('dequeue', () => {
+    expect(queue.dequeue()).to.equal(1);
+    expect(queue.getLength()).to.equal(2);
+    expect(queue.getStorage()).to.eql([2, 4]);
   });
 });
 
